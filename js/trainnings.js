@@ -47,17 +47,17 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-function showMyDB() {
-    if (personalMovitDB.privat == true) {
+function showMyDB(hidden) {
+    if (!hidden) {
         console.log(personalMovitDB);
     }
 }
 
-showMyDB();
+showMyDB(personalMovitDB.privat);
 
 function writeYourGenres() {
     for (let i = 1; i < 4; i++) {
-        personalMovitDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i}?`)
+        personalMovitDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}?`)
     };
 }
 
